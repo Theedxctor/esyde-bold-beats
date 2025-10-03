@@ -6,7 +6,7 @@ import MusicPlayerBar from "@/components/MusicPlayerBar";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import { Button } from "@/components/ui/button";
-import esydeLogo from "@/assets/esyde-logo.png";
+import esydeLogo from "@/assets/logo.jpg";
 import type { Track } from "@/components/MusicPlaylist";
 
 const Index = () => {

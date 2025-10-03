@@ -37,6 +37,43 @@ const MusicPlayerBar = ({ track, onClose, onNext, onPrevious }: MusicPlayerBarPr
 
   if (!track) return null;
 
+  // If track has Spotify embed, show Spotify player
+  if (track.spotifyEmbedUrl) {
+    return (
+      <div 
+        className="fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-xl border-t border-primary/30 shadow-[0_-10px_40px_rgba(220,38,38,0.3)] z-50 animate-slide-in-from-bottom"
+        style={{
+          animation: 'slideInFromBottom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)'
+        }}
+      >
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex-1">
+              <iframe 
+                style={{ borderRadius: '12px' }}
+                src={track.spotifyEmbedUrl}
+                width="100%"
+                height="152"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              />
+            </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onClose}
+              className="hover:text-destructive transition-colors self-start"
+            >
+              <X className="h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div 
       className="fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-xl border-t border-primary/30 shadow-[0_-10px_40px_rgba(220,38,38,0.3)] z-50 animate-slide-in-from-bottom"
