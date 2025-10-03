@@ -1,25 +1,41 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import AlbumCarousel from "@/components/AlbumCarousel";
+import MusicPlaylist from "@/components/MusicPlaylist";
+import MusicPlayerBar from "@/components/MusicPlayerBar";
+import ScrollAnimation from "@/components/ScrollAnimation";
+import BackgroundAnimation from "@/components/BackgroundAnimation";
 import { Button } from "@/components/ui/button";
 import esydeLogo from "@/assets/esyde-logo.png";
+import type { Track } from "@/components/MusicPlaylist";
 
 const Index = () => {
+  const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
+
   useEffect(() => {
-    // Smooth scroll animation on load
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
+  const handlePlayTrack = (track: Track) => {
+    setCurrentTrack(track);
+  };
+
+  const handleClosePlayer = () => {
+    setCurrentTrack(null);
+  };
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative">
+      <BackgroundAnimation />
       <Navigation />
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen pt-20 flex items-center">
+      <section id="home" className="min-h-screen pt-20 flex items-center relative z-10">
         <div className="container mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Hero Text */}
-            <div className="space-y-8 animate-fade-in">
+            <ScrollAnimation>
+              <div className="space-y-8">
               <div className="space-y-2">
                 <h1 className="hero-text text-foreground">
                   It's more than music
@@ -40,10 +56,12 @@ const Index = () => {
               <Button className="cta-button">
                 Book Session
               </Button>
-            </div>
+              </div>
+            </ScrollAnimation>
 
             {/* Right Side - Logo & Carousel */}
-            <div className="space-y-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <ScrollAnimation delay={200}>
+              <div className="space-y-12">
               <div className="flex justify-center">
                 <img 
                   src={esydeLogo} 
@@ -58,18 +76,23 @@ const Index = () => {
                 </h2>
                 <AlbumCarousel />
               </div>
-            </div>
+              </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
 
+      {/* Music Playlist Section */}
+      <MusicPlaylist onPlayTrack={handlePlayTrack} />
+
       {/* About Section */}
-      <section id="about" className="min-h-screen flex items-center bg-secondary/30">
+      <section id="about" className="min-h-screen flex items-center bg-secondary/30 relative z-10">
         <div className="container mx-auto px-6 py-20">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              About E-SYDE
-            </h2>
+          <ScrollAnimation>
+            <div className="max-w-4xl mx-auto text-center space-y-8">
+              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                About E-SYDE
+              </h2>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
               We are more than just an entertainment company. We are a movement, 
               a collective of artists, producers, and visionaries pushing the 
@@ -95,34 +118,38 @@ const Index = () => {
                 </p>
               </div>
             </div>
-          </div>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* Our Work Section */}
-      <section id="work" className="min-h-screen flex items-center">
+      <section id="work" className="min-h-screen flex items-center relative z-10">
         <div className="container mx-auto px-6 py-20">
-          <div className="text-center space-y-8">
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              Our Work
-            </h2>
+          <ScrollAnimation>
+            <div className="text-center space-y-8">
+              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Our Work
+              </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               From production to performance, we bring vision to life.
             </p>
-            <div className="pt-12">
-              <AlbumCarousel />
+              <div className="pt-12">
+                <AlbumCarousel />
+              </div>
             </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex items-center bg-secondary/30">
+      <section id="contact" className="min-h-screen flex items-center bg-secondary/30 relative z-10">
         <div className="container mx-auto px-6 py-20">
-          <div className="max-w-2xl mx-auto text-center space-y-8">
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              Let's Create Together
-            </h2>
+          <ScrollAnimation>
+            <div className="max-w-2xl mx-auto text-center space-y-8">
+              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Let's Create Together
+              </h2>
             <p className="text-xl text-muted-foreground">
               Ready to take your project to the next level? Book a session with us today.
             </p>
@@ -133,16 +160,25 @@ const Index = () => {
               <p className="text-lg">Email: contact@esyde-entertainment.com</p>
               <p className="text-lg">Follow us on social media for updates</p>
             </div>
-          </div>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8">
+      <footer className="border-t border-border py-8 relative z-10">
         <div className="container mx-auto px-6 text-center text-muted-foreground">
           <p>&copy; 2025 E-SYDE Entertainment. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Music Player Bar */}
+      <MusicPlayerBar
+        track={currentTrack}
+        onClose={handleClosePlayer}
+        onNext={() => {/* Next track logic */}}
+        onPrevious={() => {/* Previous track logic */}}
+      />
     </div>
   );
 };

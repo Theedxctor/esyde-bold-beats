@@ -76,4 +76,37 @@ All colors MUST be HSL.
   .nav-link {
     @apply text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium;
   }
+
+  .animate-in {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes equalizer {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
 }
