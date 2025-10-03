@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import missCoverArt from "@/assets/misscoverart.png";
+import junkieCoverArt from "@/assets/junkiecoverart.png";
+import sibanjiCoverArt from "@/assets/sibanjicoverart.png";
+import silahaCoverArt from "@/assets/silahacoverart.png";
+import ketepaCoverArt from "@/assets/Ketepacoverart.png";
 
 interface Album {
   id: number;
@@ -11,22 +16,34 @@ interface Album {
 
 const albums: Album[] = [
   {
+    id: 3,
+    title: "Sibanji",
+    artist: "Toxic Lyrikali x Taliwan x Beat Kidd",
+    coverUrl: sibanjiCoverArt,
+  },
+  {
     id: 1,
-    title: "Junkie",
-    artist: "E-Side",
-    coverUrl: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop"
+    title: "Miss",
+    artist: "Toxic Lyrikali x Taiwan",
+    coverUrl: missCoverArt,
   },
   {
     id: 2,
-    title: "Midnight Vibes",
-    artist: "E-Side",
-    coverUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
+    title: "Junkie",
+    artist: "Toxic Lyrikali x Taiwan x Lastie",
+    coverUrl: junkieCoverArt,
   },
   {
-    id: 3,
-    title: "Urban Dreams",
-    artist: "E-Side",
-    coverUrl: "https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop"
+    id: 4,
+    title: "Silaha-Remix",
+    artist: "Alex Msafiri ft Scar Mkadinali x Taliwan",
+    coverUrl: silahaCoverArt,
+  },
+  {
+    id: 5,
+    title: "Ketepa Riddim",
+    artist: "Beat Kidd x Taliwan",
+    coverUrl: ketepaCoverArt,
   },
 ];
 

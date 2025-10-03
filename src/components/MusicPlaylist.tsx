@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
+import missCoverArt from "@/assets/misscoverart.png";
+import junkieCoverArt from "@/assets/junkiecoverart.png";
+import sibanjiCoverArt from "@/assets/sibanjicoverart.png";
+import silahaCoverArt from "@/assets/silahacoverart.png";
+import ketepaCoverArt from "@/assets/Ketepacoverart.png";
 
 interface Track {
   id: number;
@@ -7,6 +12,7 @@ interface Track {
   artist: string;
   coverUrl: string;
   duration: string;
+  spotifyEmbedUrl?: string;
 }
 
 interface MusicPlaylistProps {
@@ -16,45 +22,43 @@ interface MusicPlaylistProps {
 const tracks: Track[] = [
   {
     id: 1,
-    title: "Junkie",
-    artist: "E-Side",
-    coverUrl: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop",
-    duration: "3:45"
+    title: "Miss",
+    artist: "Toxic Lyrikali x Taiwan",
+    coverUrl: missCoverArt,
+    duration: "2:37",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/track/29Wz3irwC7tgsBJtgOJLVg"
   },
   {
     id: 2,
-    title: "Midnight Vibes",
-    artist: "E-Side",
-    coverUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop",
-    duration: "4:12"
+    title: "Junkie",
+    artist: "Toxic Lyrikali x Taiwan x Lastie",
+    coverUrl: junkieCoverArt,
+    duration: "2:46",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/track/5VVshPhuwA0OCCLvvhukJr"
   },
   {
     id: 3,
-    title: "Urban Dreams",
-    artist: "E-Side",
-    coverUrl: "https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop",
-    duration: "3:28"
+    title: "Sibanji",
+    artist: "Toxic Lyrikali x Taliwan x Beat Kidd",
+    coverUrl: sibanjiCoverArt,
+    duration: "3:25",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/track/2CrTLKDsoYkZdeO1CU0Ulj"
   },
   {
     id: 4,
-    title: "Neon Nights",
-    artist: "E-Side",
-    coverUrl: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=400&fit=crop",
-    duration: "4:05"
+    title: "Silaha-Remix",
+    artist: "Alex Msafiri ft Scar Mkadinali x Taliwan",
+    coverUrl: silahaCoverArt,
+    duration: "3:34",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/track/5UBvktmyYn5C0gRuKkHtnP"
   },
   {
     id: 5,
-    title: "Street Symphony",
-    artist: "E-Side",
-    coverUrl: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&h=400&fit=crop",
-    duration: "3:52"
-  },
-  {
-    id: 6,
-    title: "Bass Lines",
-    artist: "E-Side",
-    coverUrl: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400&h=400&fit=crop",
-    duration: "4:20"
+    title: "Ketepa Riddim",
+    artist: "Beat Kidd x Taliwan",
+    coverUrl: ketepaCoverArt,
+    duration: "2:03",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/track/2xcsiZtz1FPv3OtXTEEaBx"
   },
 ];
 
