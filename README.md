@@ -1,50 +1,36 @@
-# Welcome to your Lovable project
+# E-SYDE Entertainment
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/160d5c68-d532-4c35-b286-18f642f171ec
+E-SYDE Entertainment is a cutting-edge platform for music and culture, built with modern web technologies.
 
-## How can I edit this code?
+## Getting Started
 
-There are several ways of editing your application.
+### Prerequisites
 
-**Use Lovable**
+- Node.js & npm - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/160d5c68-d532-4c35-b286-18f642f171ec) and start prompting.
+### Local Development
 
-Changes made via Lovable will be committed automatically to this repo.
+Follow these steps to get started with local development:
 
-**Use your preferred IDE**
+```bash
+# Clone the repository
+git clone <repository-url>
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Navigate to the project directory
+cd esyde-bold-beats
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
+The project follows a modern React application structure with TypeScript and Vite.
 - Click on the "Code" button (green button) near the top right.
 - Select the "Codespaces" tab.
 - Click on "New codespace" to launch a new Codespace environment.
