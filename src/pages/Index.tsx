@@ -95,7 +95,7 @@ const Index = () => {
               </h2>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
               We are more than just an entertainment company. We are a movement, 
-              a collective of artists, producers, and visionaries pushing the 
+              a collective of artists, producers and visionaries pushing the 
               boundaries of what's possible in music and culture.
             </p>
             <div className="grid md:grid-cols-3 gap-8 pt-12">
@@ -108,7 +108,7 @@ const Index = () => {
               <div className="p-6 rounded-lg bg-card border border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-glow">
                 <h3 className="text-2xl font-bold mb-4 text-primary">Culture</h3>
                 <p className="text-muted-foreground">
-                  Building a community that celebrates art, music, and authentic expression.
+                  Building a community that celebrates art, music and authentic expression.
                 </p>
               </div>
               <div className="p-6 rounded-lg bg-card border border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-glow">
